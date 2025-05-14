@@ -6,14 +6,14 @@ const net = require('net');
 const { Buffer } = require('buffer');
 const { exec, execSync } = require('child_process');
 const { WebSocket, createWebSocketStream } = require('ws');
-const UUID = process.env.UUID || '33e00e9d-f768-41d5-8dd8-1cd9ae9bfd87'; // 使用哪吒v1部署多个需要修改UUID，否则会覆盖
+const UUID = process.env.UUID || '2ebe9cec-f680-491a-9047-53fa2065b3d5'; // 使用哪吒v1部署多个需要修改UUID，否则会覆盖
 const NEZHA_SERVER = process.env.NEZHA_SERVER || 'tz.172769.xyz:8008 '; // 哪吒v1填写形式：nz.abc.com:8008  哪吒v0填写形式：nz.abc.com
 const NEZHA_PORT = process.env.NEZHA_PORT || '';     // 哪吒v1留空，v0的agent端口
 const NEZHA_KEY = process.env.NEZHA_KEY || 'HZzmmAXO781eLhuDdGTGlECqcVIt5kgj';       // 哪吒v1的NZ_CLIENT_CECRET或v0的agent密钥
 const DOMAIN = process.env.DOMAIN || 'site--nodejs--sxwxfbvysfnk.code.run';  // 必填,改为自己的app名称和账户名：app名称-账户名称.ladeapp.com
 const AUTO_ACCESS = process.env.AUTO_ACCESS || true;   // true开启自动保活，false关闭
 const SUB_PATH = process.env.SUB_PATH || 'emKsJg8QRQ2JsL';         // 节点订阅路径
-const NAME = process.env.NAME || 'Glitch';                // 节点名称
+const NAME = process.env.NAME || 'Aws';                // 节点名称
 const PORT = process.env.PORT || 3000;                  // http服务和ws服务端口，不用改
 
 const metaInfo = execSync(
